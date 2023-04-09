@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+</head>
+<body>
+    <h1>object in java script</h1>
+    <script >
+        const emp_details={
+            ename:"deva",
+            eid:10,
+            esal:30000,
+            eplace:"chennai"
+        }
+        console.log(emp_details);
+
+        emp_details.esal=100000;
+        console.log(emp_details);
+
+        emp_details.edesignation="SOFTWARE DEVELOPER";
+        console.log(emp_details);
+        //delete the key
+        delete emp_details.eplace;
+        console.log(emp_details);
+
+        console.log(Object.keys(emp_details));
+        console.log(Object.values(emp_details));
+        console.log(Object.entries(emp_details));
+        //object can freeze
+       // Object.freeze(emp_details);
+        //can't change the value
+        emp_details.ename="naveen";
+        console.log(emp_details);
+        //is obj freeze or not
+        console.log(Object.isFrozen(emp_details));
+
+        //obj is sealed
+        Object.seal(emp_details);
+        console.log(Object.isSealed(emp_details));
+
+        //if obj is seal we can modify values but we can't modifiy keys
+        emp_details.eid=200;
+        console.log(emp_details);
+        delete emp_details.ename;
+        console.log(emp_details);
+
+
+
+        
+    </script>
+</body>
+</html>
